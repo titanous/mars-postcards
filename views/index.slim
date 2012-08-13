@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Postcards from Mars
+
+  body
+    h1 Postcards from Mars
+    - IMAGES.each do |i|
+      a href=postcard_link(i)
+        img src="/images/small_#{i}"
