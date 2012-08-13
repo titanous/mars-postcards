@@ -10,7 +10,7 @@ helpers do
   end
 
   def postcard_url(image)
-    "http://www.touchnote.com/create-card-from-design/?refid=mars-postcards&imgsrc=http://marspostcards.herokuapp.com/images/#{image}.jpg"
+    "https://www.touchnote.com/create-card-from-design/?refid=mars-postcards&imgsrc=http://marspostcards.com/images/#{image}.jpg"
   end
 
   def postcard_path(image)
