@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'slim'
 
-IMAGES = Dir.glob('public/images/PIA*.jpg').map { |f| File.basename(f) }
+IMAGES = Dir.glob('public/images/PIA*.jpg').map { |f| File.basename(f) }.sort
 
 helpers do
   def nasa_link(image)
