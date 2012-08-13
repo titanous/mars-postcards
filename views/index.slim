@@ -2,9 +2,17 @@ doctype html
 html
   head
     title Postcards from Mars
+    link rel='stylesheet' href=stylesheet_path('style')
+    script src='//use.typekit.net/ami7pun.js'
+    javascript:
+      try{Typekit.load();}catch(e){}
 
   body
     h1 Postcards from Mars
-    - IMAGES.each do |i|
-      a href=postcard_path(i)
-        img src="/images/small_#{i}"
+    .content
+      - IMAGES.each do |i|
+        .postcard
+          a href=postcard_path(i)
+            img src=image_path('small_'+i, digest: false)
+          .source
+            a href=nasa_link(i) Source

@@ -1,5 +1,4 @@
 require './app'
-require 'rack/rewrite'
 
 use Rack::Deflater
 use Rack::Rewrite do
@@ -7,4 +6,11 @@ use Rack::Rewrite do
     env['SERVER_NAME'] != 'marspostcards.com'
   }
 end if ENV['RACK_ENV'] == 'production'
-run Sinatra::Application
+
+map App.assets_prefix do
+  run App.sprockets
+end
+
+map '/' do
+  run App
+end
