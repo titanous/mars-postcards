@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'slim'
 
-IMAGES = Dir.glob('public/images/PIA*.jpeg').map { |f| File.basename(f) }
+IMAGES = Dir.glob('public/images/PIA*.jpg').map { |f| File.basename(f) }
 
 helpers do
   def nasa_link(image)
@@ -18,7 +18,7 @@ get '/' do
   slim :index
 end
 
-get %r{/images/.+\.jpeg} do
+get %r{/images/.+\.jpg} do
   cache_control :public, max_age: 31556952
   send_file params[:matches][0]
 end
