@@ -9,13 +9,21 @@ helpers do
     'http://www.jpl.nasa.gov/spaceimages/details.php?id=' + image.match(/PIA\d{5}/)[0]
   end
 
-  def postcard_link(image)
-    'http://www.touchnote.com/create-card-from-design/?refid=mars-postcards&imgsrc=http://mars.titn.us/images/' + image
+  def postcard_url(image)
+    "http://www.touchnote.com/create-card-from-design/?refid=mars-postcards&imgsrc=http://marspostcards.herokuapp.com/images/#{image}.jpg"
+  end
+
+  def postcard_path(image)
+    "/#{File.basename(image, '.jpg')}/postcard"
   end
 end
 
 get '/' do
   slim :index
+end
+
+get '/:id/postcard' do
+  redirect postcard_url(params[:id])
 end
 
 get %r{/images/.+\.jpg} do
