@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require 'sass'
 
 class App < Sinatra::Base
   IMAGES = Dir.glob('assets/img/PIA*.jpg').map { |f| File.basename(f) }.sort.reverse
