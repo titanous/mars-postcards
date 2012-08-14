@@ -21,7 +21,9 @@ html
       })();
     javascript:
       (function() {
-        var dataId = function(e) { return { id: e.dataset['id'] }; }
+        var dataId = function(e) {
+          return { id: e.dataset.id };
+        };
         mixpanel.track_links('.make', 'Postcard click', dataId);
         mixpanel.track_links('.source a', 'Source click', dataId);
         mixpanel.track_links('#twitter', 'Twitter click');
