@@ -27,6 +27,7 @@ html
         mixpanel.track_links('.make', 'Postcard click', dataId);
         mixpanel.track_links('.source a', 'Source click', dataId);
         mixpanel.track_links('#twitter', 'Twitter click');
+        mixpanel.track_links('#pinify', 'Pinify click');
         mixpanel.track_links('#nasa', 'NASA click');
       })();
 
@@ -43,6 +44,8 @@ html
       .about
         ' Created by
         a#twitter href='https://twitter.com/titanous' @titanous
+        ' . If you liked this, you should check out
+        a#pinify href='http://pinify.me' Pinify
         ' . All images are from the
         a#nasa href='http://mars.jpl.nasa.gov/msl/' Mars Science Laboratory Curiosity Rover
         | . Courtesy NASA/JPL-Caltech/Univ. of Arizona.
