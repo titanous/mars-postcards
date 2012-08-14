@@ -33,7 +33,7 @@ html
   body
     #content
       h1 Postcards from Mars
-      h2 Send a free postcard from the Curiosity Rover to anywhere in the world.
+      h2 Send a free postcard from the Curiosity Mars Rover to anywhere in the world.
       - IMAGES.each do |i|
         .postcard
           a.make href=postcard_path(i) data-id=postcard_id(i)
@@ -43,6 +43,6 @@ html
       .about
         ' Created by
         a#twitter href='https://twitter.com/titanous' @titanous
-        ' . All images are from NASA's
+        ' . All images are from the
         a#nasa href='http://mars.jpl.nasa.gov/msl/' Mars Science Laboratory Curiosity Rover
         | . Courtesy NASA/JPL-Caltech/Univ. of Arizona.
