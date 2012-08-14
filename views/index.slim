@@ -35,7 +35,7 @@ html
       - IMAGES.each do |i|
         .postcard
           a.make href=postcard_path(i) data-id=postcard_id(i)
-            img src=image_path('small_'+i, digest: false)
+            img src=image_path('small_'+i, digest: false) width=700
           .source
             a href=nasa_link(i) data-id=postcard_id(i) Source
       .about
