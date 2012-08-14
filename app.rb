@@ -36,7 +36,7 @@ class App < Sinatra::Base
     end
 
     def postcard_url(image)
-      url = URI.encode_www_form_component("http://marspostcards.com/assets/#{image}.jpg")
+      url = "http://marspostcards.com/assets/#{image}.jpg"
       "https://www.touchnote.com/create-card-from-design/?refid=mars-postcards&imgsrc=#{url}"
     end
 
