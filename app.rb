@@ -56,4 +56,9 @@ class App < Sinatra::Base
   get '/:id/postcard' do
     redirect postcard_url(params[:id])
   end
+
+  get '/favicon.ico' do
+    cache_control :public, max_age: 31556952
+    send_file 'favicon.ico'
+  end
 end
