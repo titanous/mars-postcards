@@ -3,9 +3,30 @@ html
   head
     title Postcards from Mars
     link rel='stylesheet' href=stylesheet_path('style')
-    script src='//use.typekit.net/ami7pun.js'
+    script typs='text/javascript' src='//use.typekit.net/ami7pun.js'
     javascript:
       try{Typekit.load();}catch(e){}
+    javascript:
+      (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.0.min.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1})(document,window.mixpanel||[]);
+      mixpanel.init("98f90acc1426c681b5b5bab9caf74480");
+    javascript:
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34075750-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    javascript:
+      (function() {
+        var dataId = function(e) { return { id: e.dataset['id'] }; }
+        mixpanel.track_links('.make', 'Postcard click', dataId);
+        mixpanel.track_links('.source a', 'Source click', dataId);
+        mixpanel.track_links('#twitter', 'Twitter click');
+        mixpanel.track_links('#nasa', 'NASA click');
+      })();
 
   body
     #content
@@ -13,13 +34,13 @@ html
       h2 Send a free postcard to anywhere in the world.
       - IMAGES.each do |i|
         .postcard
-          a.make href=postcard_path(i)
+          a.make href=postcard_path(i) data-id=postcard_id(i)
             img src=image_path('small_'+i, digest: false)
           .source
-            a href=nasa_link(i) Source
+            a href=nasa_link(i) data-id=postcard_id(i) Source
       .about
         ' Created by
         a#twitter href='https://twitter.com/titanous' @titanous
         ' . All images are from NASA's
-        a href='http://mars.jpl.nasa.gov/msl/' Mars Science Laboratory Curiosity Rover
+        a#nasa href='http://mars.jpl.nasa.gov/msl/' Mars Science Laboratory Curiosity Rover
         | . Courtesy NASA/JPL-Caltech/Univ. of Arizona.

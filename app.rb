@@ -43,6 +43,10 @@ class App < Sinatra::Base
     def postcard_path(image)
       "/#{File.basename(image, '.jpg')}/postcard"
     end
+
+    def postcard_id(image)
+      image.split('.')[0]
+    end
   end
 
   get '/' do
