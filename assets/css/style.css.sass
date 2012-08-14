@@ -21,9 +21,25 @@ time, mark, audio, video
 body
   font-family: 'museo-sans'
   background-color: #bcbcbc
-  font-size: 40px
   color: #424242
   line-height: 1
+  font-size: 20px
+  margin-top: 50px
+  margin-bottom: 50px
+  text-align: center
+
+h1, h2
+  margin-bottom: 20px
+
+h1
+  font-size: 50px
+
+h2
+  font-size: 30px
+
+a
+  color: #2d89a7
+  text-decoration: none
 
 .postcard
   margin: 10px
@@ -35,16 +51,35 @@ body
   .source
     display: none
     position: relative
-    margin-top: -541px
+    margin-top: -521px
     background-color: #e9e9e9
     padding: 10px
     padding-left: 30px
     width: 70px
     border-bottom-right-radius: 12px
-    a
-      color: #3299bb
-      font-size: 20px
   &:hover .source
     display: block
-  &:hover .source
-    display: block
+
+.about
+  clear: both
+  padding-top: 20px
+
+#content
+  margin: 0px auto
+
+@media screen and (min-width: 760px)
+  #content
+    width: 760px
+
+@media screen and (min-width: 1520px)
+  #content
+    width: 1520px
+
+@media screen and (max-width: 759px)
+  .postcard
+    clear: both
+    height: auto
+    img
+      width: 90%
+    &:hover .source
+      display: none

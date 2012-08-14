@@ -2,7 +2,7 @@ require 'bundler'
 Bundler.require
 
 class App < Sinatra::Base
-  IMAGES = Dir.glob('assets/img/PIA*.jpg').map { |f| File.basename(f) }.sort
+  IMAGES = Dir.glob('assets/img/PIA*.jpg').map { |f| File.basename(f) }.sort.reverse
 
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'

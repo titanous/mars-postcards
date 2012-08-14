@@ -8,11 +8,18 @@ html
       try{Typekit.load();}catch(e){}
 
   body
-    h1 Postcards from Mars
-    .content
+    #content
+      h1 Postcards from Mars
+      h2 Send a free postcard to anywhere in the world.
       - IMAGES.each do |i|
         .postcard
-          a href=postcard_path(i)
+          a.make href=postcard_path(i)
             img src=image_path('small_'+i, digest: false)
           .source
             a href=nasa_link(i) Source
+      .about
+        ' Created by
+        a#twitter href='https://twitter.com/titanous' @titanous
+        ' . All images are from NASA's
+        a href='http://mars.jpl.nasa.gov/msl/' Mars Science Laboratory Curiosity Rover
+        | . Courtesy NASA/JPL-Caltech/Univ. of Arizona.
